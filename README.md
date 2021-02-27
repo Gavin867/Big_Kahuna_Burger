@@ -1,2 +1,2 @@
-# Big_Kahuna_Burger_App
-Mmmmm! That is a tasty burger... rendered with handlbars.js...
+# Big Kahuna Burger
+Mmm-hmmm! This is a tasty burger... powered by mySQL and rendered with handlbars.js.
