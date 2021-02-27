@@ -1,21 +1,19 @@
 require('dotenv').config();
-var express = require("express");
 
-var PORT = process.env.PORT || 8080;
+const express = require("express");
+const expressHandlebars = require("express-handlebars");
+const routes = require("./controllers/burger_controller");
+const app = express();
 
-var app = express();
+const PORT = process.env.PORT || 8080;
+const database = require("./models");
 
 app.use(express.static("public"));
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-var expressHandlebars = require("express-handlebars");
-
 app.engine("handlebars", expressHandlebars({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-
-var routes = require("./controllers/burger_controller");
 
 app.use(routes);
 
