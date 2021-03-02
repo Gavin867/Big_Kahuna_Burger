@@ -1,7 +1,12 @@
 const express = require("express");
+const connection = require("../configuration/connection");
 const router = express.Router();
 const bigKahunaBurger = require("../models/bigKahunaBurger");
 
 router.get("/", function (request, result) {
-    bigKahunaBurger.
+    bigKahunaBurger.select(function (data) {
+        let burgerObject = {
+            
+        }
+    })
 })
