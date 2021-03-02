@@ -1,3 +1,3 @@
-# Big Kahuna Burger
+# The Big Kahuna Burger App
 
-Mmm-hmmm! This is a tasty burger... powered by mySQL and rendered with handlbars.js.
+Mmm-mmmm! This is a tasty burger... powered by node, express, mySQL and rendered with handlbars.js.
