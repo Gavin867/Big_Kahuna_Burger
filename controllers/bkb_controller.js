@@ -11,3 +11,7 @@ router.get("/", function (request, result) {
         results.render("index", burgerData);
     });
 });
+
+router.post("/api/hamburgers", function (request, result) {
+    burger.create([""])
+})
