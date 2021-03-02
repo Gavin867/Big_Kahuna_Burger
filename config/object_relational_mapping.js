@@ -31,7 +31,7 @@ function convertToSQL (object) {
 
 const objectRelationMap = {
 
-    selectBurgers: function (tableInsert, currentBurger) {
+    select: function (tableInsert, currentBurger) {
         let stringQuery = `SELECT * FROM ${tableInsert};`
     
         connection.query(stringQuery, values, function (error, data) {
@@ -43,7 +43,7 @@ const objectRelationMap = {
         });
     },
 
-    insertBurger: function (table, columns, values, currentBurger) {
+    insert: function (table, columns, values, currentBurger) {
         let stringQuery = `INSERT INTO ${table} (${columns.toString()}) VALUES (${addQuestionMark(values.length)})`
     
         console.log(stringQuery);
@@ -57,7 +57,7 @@ const objectRelationMap = {
         });
     },
 
-    updateBurger: function (table, columnValues, condition, currentBurger) {
+    update: function (table, columnValues, condition, currentBurger) {
         let stringQuery = `UPDATE ${table} SET ${convertToSQL(columnValues)} WHERE ${condition};`
         
         console.log(stringQuery);
