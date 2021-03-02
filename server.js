@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const express = require("express");
 const expressHandlebars = require("express-handlebars");
-const routes = require("./controllers/burger_controller");
+const routes = require("./controllers/bkb_controller");
 const app = express();
 
 const PORT = process.env.PORT || 8080;
