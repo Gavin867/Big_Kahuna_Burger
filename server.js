@@ -6,7 +6,7 @@ const routes = require("./controllers/bkb_controller");
 const app = express();
 
 const PORT = process.env.PORT || 8080;
-const database = require("./models");
+const database = require("./models/bigKahunaBurger");
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));

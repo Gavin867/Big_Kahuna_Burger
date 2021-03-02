@@ -1,7 +1,7 @@
 {
   "name": "Big_Kahuna_Burger_App",
   "version": "1.0.0",
-  "description": "Mmm-hmmm! This is a tasty burger... powered by mySQL and rendered with handlbars.js.",
+  "description": "Mmm-mmm! This is a tasty burger... powered by mySQL and rendered with handlbars.js.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/Gavin867/Big_Kahuna_Burger_App/issues"
   },
-  "homepage": "https://github.com/Gavin867/Big_Kahuna_Burger_App#readme"
+  "homepage": "https://github.com/Gavin867/Big_Kahuna_Burger_App#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "mysql": "^2.18.1"
+  }
 }
