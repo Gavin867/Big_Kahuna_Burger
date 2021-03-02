@@ -6,8 +6,8 @@ USE bigkahuna_DB;
 
 CREATE TABLE hamburgers
 (
-	burger_id int NOT NULL AUTO_INCREMENT,
-	burger_name varchar(255) NOT NULL,
-	burger_devoured BOOLEAN DEFAULT false,
-	PRIMARY KEY (burger_id)
+	hamburger_id int NOT NULL AUTO_INCREMENT,
+	hamburger_name varchar(255) NOT NULL,
+	hamburger_devoured BOOLEAN DEFAULT false,
+	PRIMARY KEY (hamburger_id)
 );
