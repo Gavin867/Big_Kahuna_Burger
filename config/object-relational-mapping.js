@@ -29,9 +29,9 @@ function convertToSQL (object) {
     return array.toString();
 };
 
-const objectRelationalMapping = {
+const objectRelationMap = {
 
-    selectAll: function (tableInsert, currentBurger) {
+    selectBurgers: function (tableInsert, currentBurger) {
         let stringQuery = `SELECT * FROM ${tableInsert};`
     
         connection.query(stringQuery, values, function (error, data) {
@@ -55,5 +55,21 @@ const objectRelationalMapping = {
 
             currentBurger(data);
         });
+    },
+
+    updateBurger: function (table, columnValues, condition, currentBurger) {
+        let stringQuery = `UPDATE ${table} SET ${convertToSQL(columnValues)} WHERE ${condition};`
+        
+        console.log(stringQuery);
+
+        connection.query(stringQuery, values, function (error, data) {
+            if (error) {
+                throw error;
+            };
+
+            currentBurger(data);
+        });      
     }
 };
+
+module.exports = objectRelationMap;
