@@ -4,7 +4,7 @@ CREATE DATABASE bigkahuna_DB;
 
 USE bigkahuna_DB;
 
-CREATE TABLE burgers
+CREATE TABLE hamburgers
 (
 	id int NOT NULL AUTO_INCREMENT,
 	burger_name varchar(255) NOT NULL,

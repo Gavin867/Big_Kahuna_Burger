@@ -5,8 +5,9 @@ const bigKahunaBurger = require("../models/bigKahunaBurger");
 
 router.get("/", function (request, result) {
     bigKahunaBurger.select(function (data) {
-        let burgerObject = {
-            
-        }
-    })
-})
+        let burgerData = {
+            hamburgers: data
+        };
+        results.render("index", burgerData);
+    });
+});
