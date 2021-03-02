@@ -57,8 +57,8 @@ const objectRelationMap = {
         });
     },
 
-    update: function (table, columnValues, condition, currentBurger) {
-        let stringQuery = `UPDATE ${table} SET ${convertToSQL(columnValues)} WHERE ${condition};`
+    update: function (table, columnValues, status, currentBurger) {
+        let stringQuery = `UPDATE ${table} SET ${convertToSQL(columnValues)} WHERE ${status};`
         
         console.log(stringQuery);
 
