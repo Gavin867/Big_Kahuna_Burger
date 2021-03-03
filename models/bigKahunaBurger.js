@@ -1,7 +1,7 @@
 const objectRelationMap = require("../configuration/object_relational_mapping");
 
 const bigKahunaBurger = {
-    select: function (currentBurger) {
+    all: function (currentBurger) {
         objectRelationMap.all("hamburgers", (results) => {
             currentBurger(results);
         });
@@ -15,12 +15,12 @@ const bigKahunaBurger = {
         objectRelationMap.update("hamburgers", convertToSQL, hamburgerStatus, (result) => {
             currentBurger(results);
         });
-    },
-    delete: function (hamburgerStatus, currentBurger) {
-        objectRelationMap.delete("hamburgers", hamburgerStatus, (result) => {
-            currentBurger(result);
-        });
     }
+    // delete: function (hamburgerStatus, currentBurger) {
+    //     objectRelationMap.delete("hamburgers", hamburgerStatus, (result) => {
+    //         currentBurger(result);
+    //     });
+    // }
 }
 
 module.exports = bigKahunaBurger

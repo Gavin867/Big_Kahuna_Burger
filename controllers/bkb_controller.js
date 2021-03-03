@@ -4,11 +4,11 @@ const router = express.Router();
 const bigKahunaBurger = require("../models/bigKahunaBurger");
 
 router.get("/", function (request, response) {
-    bigKahunaBurger.select(function (data) {
+    bigKahunaBurger.all(function (data) {
 
         let hamburgerData = { hamburgers: data };
 
-        results.render("index", hamburgerData);
+        response.render("index", hamburgerData);
     });
 });
 
