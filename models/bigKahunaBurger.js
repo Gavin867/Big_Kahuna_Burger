@@ -16,11 +16,6 @@ const bigKahunaBurger = {
             currentBurger(results);
         });
     }
-    // delete: function (hamburgerStatus, currentBurger) {
-    //     objectRelationMap.delete("hamburgers", hamburgerStatus, (result) => {
-    //         currentBurger(result);
-    //     });
-    // }
 }
 
 module.exports = bigKahunaBurger
