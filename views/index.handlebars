@@ -23,7 +23,7 @@
                     {{#each hamburgers}}
                     {{#unless hamburger_devoured}}
                     <div class="row text-center">
-                        {{>hamburgers/partial devoured=true}}
+                        {{>bigkahuna-block hamburger_devoured=true}}
                     </div>
                     {{/unless}}
                     {{/each}}
@@ -38,7 +38,7 @@
                     {{#each hamburgers}}
                     {{#if hamburger_devoured}}
                     <div class="row text-center">
-                        {{>hamburgers/partial devoured=false}}
+                        {{>bigkahuna-block hamburger_devoured=false}}
                     </div>
                     {{/if}}
                     {{/each}}
