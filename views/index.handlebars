@@ -17,12 +17,12 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-6">
-            <div class="card">
-                <h2 class="text-center">Burgers to be Eaten</h2>
-                <ul class="">
+            <div class="container p-4">
+                <h2 class="text-center">Burgers Queued</h2>
+                <ul class="list-unstyled text-center m-2">
                     {{#each hamburgers}}
                     {{#unless hamburger_devoured}}
-                    <div class="row text-center">
+                    <div class="row">
                         {{>bigkahuna-block hamburger_devoured=true}}
                     </div>
                     {{/unless}}
@@ -32,12 +32,12 @@
         </div>
 
         <div class="col-lg-6">
-            <div class="card">
+            <div class="container p-4">
                 <h2 class="text-center">Burgers Eaten</h2>
-                <ul>
+                <ul class="list-unstyled text-center m-2">
                     {{#each hamburgers}}
                     {{#if hamburger_devoured}}
-                    <div class="row text-center">
+                    <div class="row">
                         {{>bigkahuna-block hamburger_devoured=false}}
                     </div>
                     {{/if}}

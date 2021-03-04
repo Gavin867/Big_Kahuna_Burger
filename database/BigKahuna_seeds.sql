@@ -5,4 +5,4 @@ VALUES
 ("Royale with Cheese", FALSE),
 ("Le Big Mac", FALSE),
 ("The Buddy Holly", TRUE),
-("Jack Rabbit Slim's Special", TRUE)
+("Jack Rabbit Slim Special", TRUE)

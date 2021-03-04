@@ -20,7 +20,7 @@ router.post("/api/hamburgers", function (request, response) {
     });
 });
 
-router.put("apil/hamburgers/:hamburger_id", function (request, response) {
+router.put("/api/hamburgers/:hamburger_id", function (request, response) {
     let hamburgerStatus = "hamburger_id = " + request.parameters.hamburger_id;
 
     console.log(hamburgerStatus);
