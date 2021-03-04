@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="card">
-                <h2 class="text-center">Title</h2>
+                <h2 class="text-center">Burgers to be Eaten</h2>
                 <ul class="">
                     {{#each hamburgers}}
                     {{#unless hamburger_devoured}}
@@ -25,10 +25,10 @@
 
         <div class="col-lg-6">
             <div class="card">
-                <h2 class="text-center">Title</h2>
+                <h2 class="text-center">Burgers Eaten</h2>
                 <ul>
                     {{#each hamburgers}}
-                    {{#unless hamburger_devoured}}
+                    {{#if hamburger_devoured}}
                     <div class="row text-center">
                         <p>{{this.hamburger_id}}. {{this.hamburger_name}}</p>
                     </div>
