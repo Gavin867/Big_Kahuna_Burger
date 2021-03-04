@@ -4,6 +4,14 @@
 
         <p>"Mmm-mmmm! This is a tasty burger!"</p>
     </header>
+
+    <form action="create-form">
+        <div class="form-group text-center col-form-label-lg">
+            <input type="text" placeholder="Burger Name" id="burger_name" name="burger_name">
+
+            <button type="submit" id="addBurger">Create Burger</button>
+        </div>
+    </form>
 </div>
 
 <div class="container">
@@ -15,7 +23,7 @@
                     {{#each hamburgers}}
                     {{#unless hamburger_devoured}}
                     <div class="row text-center">
-                        <p>{{this.hamburger_id}}. {{this.hamburger_name}}</p>
+                        {{>hamburgers/partial devoured=true}}
                     </div>
                     {{/unless}}
                     {{/each}}
@@ -30,7 +38,7 @@
                     {{#each hamburgers}}
                     {{#if hamburger_devoured}}
                     <div class="row text-center">
-                        <p>{{this.hamburger_id}}. {{this.hamburger_name}}</p>
+                        {{>hamburgers/partial devoured=false}}
                     </div>
                     {{/if}}
                     {{/each}}
