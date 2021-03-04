@@ -28,7 +28,7 @@ router.put("/api/hamburgers/:hamburger_id", function (request, response) {
     console.log(request.body);
 
     bigKahunaBurger.update(
-        { devoured: request.body.devoured },
+        { hamburger_devoured: request.body.hamburger_devoured },
 
         hamburgerStatus,
 
