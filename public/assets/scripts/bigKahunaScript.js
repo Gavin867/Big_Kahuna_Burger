@@ -1,8 +1,11 @@
 $(function () {
     $("#createBurger").on("click", function () {
-        const newBurger = $("#createBurger").val().trim();
+        const newBurger = $("#newBurger").val().trim();
+        
+        console.log(newBurger);
+        
         const body = {
-            hamburger_name : newBurger,
+            hamburger_name: newBurger,
             hamburger_devoured: 0
         }
 
