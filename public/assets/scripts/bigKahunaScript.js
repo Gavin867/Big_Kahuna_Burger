@@ -25,8 +25,8 @@ $(function () {
         });
     });
 
-    $("#eatBurger").on("click", function (event) {
-        let id = $(event.target).data("hamburger_id");
+    $(".eatBurger").on("click", function (event) {
+        let id = $(this).data("id");
 
         console.log(id);
 
@@ -35,7 +35,7 @@ $(function () {
         };
 
         $.ajax({
-            url: "/api/hamburgers/:" + id,
+            url: "/api/hamburgers/" + id,
             method: "PUT",
             data:devouredHamburgers
         })

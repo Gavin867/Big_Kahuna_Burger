@@ -43,12 +43,12 @@ const objectRelationMap = {
         });
     },
 
-    create: function (table, columns, values, callback) {
+    create: function (table, columns, callback) {
         let stringQuery = `INSERT INTO ${table} (${columns.toString()}) VALUES (${addQuestionMark(values.length)})`
     
         console.log(stringQuery);
 
-        connection.query(stringQuery, values, function (error, data) {
+        connection.query(stringQuery, function (error, data) {
             if (error) {
                 throw error;
             };
@@ -62,7 +62,7 @@ const objectRelationMap = {
         
         console.log(stringQuery);
 
-        connection.query(stringQuery, values, function (error, data) {
+        connection.query(stringQuery, function (error, data) {
             if (error) {
                 throw error;
             };
@@ -76,7 +76,7 @@ const objectRelationMap = {
 
         console.log(stringQuery);
 
-        connection.query(stringQuery, values, function (error, data) {
+        connection.query(stringQuery, function (error, data) {
             if (error) {
                 throw error;
             };
