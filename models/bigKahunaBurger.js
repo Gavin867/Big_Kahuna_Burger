@@ -1,21 +1,26 @@
 const objectRelationMap = require("../configuration/object_relational_mapping");
 
 const bigKahunaBurger = {
-    all: function (currentBurger) {
+    all: function (callback) {
         objectRelationMap.all("hamburgers", (results) => {
-            currentBurger(results);
+            callback(results);
         });
     },
-    create: function (columns, values, currentBurger) {
+    create: function (columns, values, callback) {
         objectRelationMap.create("hamburgers", columns, values, (results) => {
-            currentBurger(results);
+            callback(results);
         });
     },
-    update: function (convertToSQL, hamburgerStatus, currentBurger) {
-        objectRelationMap.update("hamburgers", convertToSQL, hamburgerStatus, (result) => {
-            currentBurger(results);
+    update: function (columnValues, hamburgerStatus, callback) {
+        objectRelationMap.update("hamburgers", columnValues, hamburgerStatus, (results) => {
+            callback(results);
+        });
+    },
+    delete: function (hamburgerStatus, callback) {
+        objectRelationMap.delete("hamburgers", hamburgerStatus, (results) => {
+            callback(results);
         });
     }
-}
+};
 
 module.exports = bigKahunaBurger
