@@ -19,17 +19,22 @@
         <div class="col-lg-6">
             <div class="container p-4">
                 <h2 class="text-center">Burgers Queued</h2>
+
                 <ul class="list-unstyled text-center m-2">
                     {{#each hamburgers}}
+
                     {{#unless hamburger_devoured}}
+
                     <li>
                         {{hamburger_name}}
-                        
+
                         <button id="eatBurger" data-id="{{this.hamburger_id}}">
                             Eat Burger
                         </button>
                     </li>
+
                     {{/unless}}
+
                     {{/each}}
                 </ul>
             </div>
@@ -38,19 +43,22 @@
         <div class="col-lg-6">
             <div class="container p-4">
                 <h2 class="text-center">Burgers Eaten</h2>
+
                 <ul class="list-unstyled text-center m-2">
                     {{#each hamburgers}}
-                    {{#if hamburger_devoured}}
-                    <div class="row">
-                        <li>
-                            {{hamburger_name}}
 
-                            <button id="deleteBurger" data-id="{{this.hamburger_id}}">
-                                Delete Burger
-                            </button>
-                        </li>
-                    </div>
+                    {{#if hamburger_devoured}}
+
+                    <li>
+                        {{hamburger_name}}
+
+                        <button id="deleteBurger" data-id="{{this.hamburger_id}}">
+                            Delete Burger
+                        </button>
+                    </li>
+
                     {{/if}}
+
                     {{/each}}
                 </ul>
             </div>
