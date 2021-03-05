@@ -35,24 +35,24 @@ router.put("/api/hamburgers/:hamburger_id", function (req, res) {
 
             if (result.modifiedRows === 0) {
 
-                return result.hamburgerStatus(404).end();
+                return res.sendStatus(404).end();
             };
 
-            res.hamburgerStatus(200).end();
+            res.sendStatus(200).end();
         });
 });
 
-router.delete("/api/hamburgers/:id", function (req, res) {
+router.delete("/api/hamburgers/:hamburger_id", function (req, res) {
     let hamburgerStatus = "hamburger_id = " + req.params.hamburger_id;
 
     bigKahunaBurger.delete(hamburgerStatus, function (result) {
 
         if (result.modifiedRows == 0) {
 
-            return result.hamburgerStatus(404).end();
+            return  res.sendStatus(404).end();
         };
 
-        res.hamburgerStatus(200).end();
+        res.sendStatus(200).end();
     });
 });
 

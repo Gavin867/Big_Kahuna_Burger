@@ -43,5 +43,20 @@ $(function () {
         .then(function () {
             location.reload();
         });
+    });
+
+    $(".deleteBurger").on("click", function (event) {
+        let id = $(this).data("id");
+
+        console.log(id);
+
+        $.ajax({
+            url: "/api/hamburgers/" + id,
+            method: "DELETE",
+        })
+        
+        .then(function () {
+            location.reload();
+        });
     })
 });

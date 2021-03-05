@@ -11,7 +11,7 @@ function addQuestionMark(number) {
 };
 
 // Convert key value pairs to SQL syntax
-function convertToSQL (object) {
+function convertToSQL(object) {
     let array = [];
 
     for (let key in object) {
@@ -33,7 +33,7 @@ const objectRelationMap = {
 
     all: function (tableInsert, callback) {
         let stringQuery = `SELECT * FROM ${tableInsert};`
-    
+
         connection.query(stringQuery, function (error, data) {
             if (error) {
                 throw error;
@@ -43,23 +43,21 @@ const objectRelationMap = {
         });
     },
 
-    create: function (table, columns, callback) {
+    create: function (table, columns, values, callback) {
         let stringQuery = `INSERT INTO ${table} (${columns.toString()}) VALUES (${addQuestionMark(values.length)})`
-    
-        console.log(stringQuery);
 
-        connection.query(stringQuery, function (error, data) {
+        console.log(stringQuery);
+        connection.query(stringQuery, values, function (error, data) {
             if (error) {
                 throw error;
             };
-
             callback(data);
         });
     },
 
     update: function (table, columnValues, hamburgerStatus, callback) {
         let stringQuery = `UPDATE ${table} SET ${convertToSQL(columnValues)} WHERE ${hamburgerStatus};`
-        
+
         console.log(stringQuery);
 
         connection.query(stringQuery, function (error, data) {
@@ -68,7 +66,7 @@ const objectRelationMap = {
             };
 
             callback(data);
-        });      
+        });
     },
 
     delete: function (table, hamburgerStatus, callback) {
