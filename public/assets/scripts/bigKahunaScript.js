@@ -13,12 +13,35 @@ $(function () {
             alert("Hamburgers must have a valid name");
             return;
         }
+
         $.ajax({
             url: "/api/hamburgers",
             method: "POST",
             data: body
-        }).then(function (result) {
+        })
+        
+        .then(function (result) {
             location.reload();
         });
     });
+
+    $("#eatBurger").on("click", function (event) {
+        let id = $(event.target).data("hamburger_id");
+
+        console.log(id);
+
+        const devouredHamburgers = {
+            hamburger_devoured: 1
+        };
+
+        $.ajax({
+            url: "/api/hamburgers/:" + id,
+            method: "PUT",
+            data:devouredHamburgers
+        })
+        
+        .then(function () {
+            location.reload();
+        });
+    })
 });

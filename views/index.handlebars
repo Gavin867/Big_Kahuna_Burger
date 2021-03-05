@@ -22,9 +22,11 @@
                 <ul class="list-unstyled text-center m-2">
                     {{#each hamburgers}}
                     {{#unless hamburger_devoured}}
-                    <div class="row">
-                        {{>bigkahuna-block hamburger_devoured=true}}
-                    </div>
+                    <li>
+                        {{hamburger_name}}
+                        <button id="eatBurger" data-id="{{this.hamburger_id}}"
+                            data-newburger="{{hamburger_devoured}}">Eat Burger</button>
+                    </li>
                     {{/unless}}
                     {{/each}}
                 </ul>
@@ -38,7 +40,11 @@
                     {{#each hamburgers}}
                     {{#if hamburger_devoured}}
                     <div class="row">
-                        {{>bigkahuna-block hamburger_devoured=false}}
+                        <li>
+                            {{hamburger_name}}
+                            <button id="deleteBurger" data-id="{{this.hamburger_id}}"
+                                data-newburger="{{hamburger_devoured}}">Delete Burger</button>
+                        </li>
                     </div>
                     {{/if}}
                     {{/each}}
