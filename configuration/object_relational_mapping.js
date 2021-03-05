@@ -1,4 +1,4 @@
-const connection = require("./connection");
+const connection = require("../configuration/connection");
 
 function addQuestionMark(number) {
     let array = [];
@@ -31,7 +31,7 @@ function convertToSQL (object) {
 
 const objectRelationMap = {
 
-    all: function (tableInsert, currentBurger) {
+    all: function (tableInsert, callback) {
         let stringQuery = `SELECT * FROM ${tableInsert};`
     
         connection.query(stringQuery, function (error, data) {
@@ -39,11 +39,11 @@ const objectRelationMap = {
                 throw error;
             };
 
-            currentBurger(data);
+            callback(data);
         });
     },
 
-    create: function (table, columns, values, currentBurger) {
+    create: function (table, columns, values, callback) {
         let stringQuery = `INSERT INTO ${table} (${columns.toString()}) VALUES (${addQuestionMark(values.length)})`
     
         console.log(stringQuery);
@@ -53,11 +53,11 @@ const objectRelationMap = {
                 throw error;
             };
 
-            currentBurger(data);
+            callback(data);
         });
     },
 
-    update: function (table, columnValues, hamburgerStatus, currentBurger) {
+    update: function (table, columnValues, hamburgerStatus, callback) {
         let stringQuery = `UPDATE ${table} SET ${convertToSQL(columnValues)} WHERE ${hamburgerStatus};`
         
         console.log(stringQuery);
@@ -67,7 +67,7 @@ const objectRelationMap = {
                 throw error;
             };
 
-            currentBurger(data);
+            callback(data);
         });      
     }
 };
