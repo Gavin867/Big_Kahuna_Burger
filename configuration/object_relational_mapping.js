@@ -69,6 +69,20 @@ const objectRelationMap = {
 
             callback(data);
         });      
+    },
+
+    delete: function (table, hamburgerStatus, callback) {
+        let stringQuery = `DELETE FROM ${table} WHERE ${hamburgerStatus};`
+
+        console.log(stringQuery);
+
+        connection.query(stringQuery, values, function (error, data) {
+            if (error) {
+                throw error;
+            };
+
+            callback(data);
+        });
     }
 };
 

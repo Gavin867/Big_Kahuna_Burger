@@ -1,34 +1,33 @@
 const express = require("express");
-const connection = require("../configuration/connection");
 const router = express.Router();
 const bigKahunaBurger = require("../models/bigKahunaBurger");
 
-router.get("/", function (request, response) {
+router.get("/", function (req, res) {
     bigKahunaBurger.all(function (data) {
 
         let hamburgerData = { hamburgers: data };
 
-        response.render("index", hamburgerData);
+        res.render("index", hamburgerData);
     });
 });
 
-router.post("/api/hamburgers", function (request, response) {
+router.post("/api/hamburgers", function (req, res) {
 
-    bigKahunaBurger.create(["hamburger_name"], [request.body.hamburger_name], function (result) {
+    bigKahunaBurger.create(["hamburger_name", "hamburger_devoured"], [req.body.hamburger_name, req.body.hamburger_devoured], function (result) {
 
-        response.json({ hamburger_id: result.insertId });
+        res.json({ hamburger_id: result.insertId });
     });
 });
 
-router.put("/api/hamburgers/:hamburger_id", function (request, response) {
-    let hamburgerStatus = "hamburger_id = " + request.parameters.hamburger_id;
+router.put("/api/hamburgers/:hamburger_id", function (req, res) {
+    let hamburgerStatus = "hamburger_id = " + req.params.hamburger_id;
 
     console.log(hamburgerStatus);
 
-    console.log(request.body);
+    console.log(req.body);
 
     bigKahunaBurger.update(
-        { hamburger_devoured: request.body.hamburger_devoured },
+        { hamburger_devoured: req.body.hamburger_devoured },
 
         hamburgerStatus,
 
@@ -39,12 +38,12 @@ router.put("/api/hamburgers/:hamburger_id", function (request, response) {
                 return result.hamburgerStatus(404).end();
             };
 
-            response.hamburgerStatus(200).end();
+            res.hamburgerStatus(200).end();
         });
 });
 
-router.delete("/api/hamburgers/:id", function (request, response) {
-    let hamburgerStatus = "hamburger_id = " + request.parameters.hamburger_id;
+router.delete("/api/hamburgers/:id", function (req, res) {
+    let hamburgerStatus = "hamburger_id = " + req.params.hamburger_id;
 
     bigKahunaBurger.delete(hamburgerStatus, function (result) {
 
@@ -53,7 +52,7 @@ router.delete("/api/hamburgers/:id", function (request, response) {
             return result.hamburgerStatus(404).end();
         };
 
-        response.hamburgerStatus(200).end();
+        res.hamburgerStatus(200).end();
     });
 });
 
