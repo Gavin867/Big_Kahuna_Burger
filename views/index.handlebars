@@ -24,8 +24,10 @@
                     {{#unless hamburger_devoured}}
                     <li>
                         {{hamburger_name}}
-                        <button id="eatBurger" data-id="{{this.hamburger_id}}"
-                            data-newburger="{{hamburger_devoured}}">Eat Burger</button>
+                        
+                        <button id="eatBurger" data-id="{{this.hamburger_id}}">
+                            Eat Burger
+                        </button>
                     </li>
                     {{/unless}}
                     {{/each}}
@@ -42,8 +44,10 @@
                     <div class="row">
                         <li>
                             {{hamburger_name}}
-                            <button id="deleteBurger" data-id="{{this.hamburger_id}}"
-                                data-newburger="{{hamburger_devoured}}">Delete Burger</button>
+
+                            <button id="deleteBurger" data-id="{{this.hamburger_id}}">
+                                Delete Burger
+                            </button>
                         </li>
                     </div>
                     {{/if}}
