@@ -25,7 +25,7 @@ Deployed Heroku Link:
 
 ## Application Summary
 
-![Main Menu]()
+![Main Menu](https://github.com/Gavin867/Big_Kahuna_Burger_App/blob/main/public/assets/images/readme-images/main-page.png)
 
 The Big Kahunna Burger App can be used to store hamburger information in a mySQL database for easy reference. With this application you can perform the following tasks:
 
@@ -35,7 +35,7 @@ The Big Kahunna Burger App can be used to store hamburger information in a mySQL
 
 ## Demo
 
-![Demo]()
+![Demo](https://github.com/Gavin867/Big_Kahuna_Burger_App/blob/main/public/assets/images/readme-images/bkb-demo.gif)
 
 ## Installation
 
