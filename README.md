@@ -21,7 +21,7 @@ Mmm-mmmm! This is a tasty burger... powered by node, express, mySQL and rendered
 ## Locations
 
 GitHub Repository Link: https://github.com/Gavin867/Big_Kahuna_Burger_App
-Deployed Heroku Link: 
+Deployed Application Link: 
 
 ## Application Summary
 
@@ -38,6 +38,10 @@ The Big Kahunna Burger App can be used to store hamburger information in a mySQL
 ![Demo](https://github.com/Gavin867/Big_Kahuna_Burger_App/blob/main/public/assets/images/readme-images/bkb-demo.gif)
 
 ## Installation
+
+No installation is required for running the deployed version of the Big Kahuna Burger App. Simply click the '[Deployed Application Link]()' provided in the '[Location](#location)' section to get started.
+
+When downloading and running the application locally, use the following steps:
 
 1. Install mySQL and MySQL workbench using the directions outlined in the '[MySQL Installation Guide](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)'.
 2. Clone the repository to your computer.
