@@ -21,6 +21,7 @@ Mmm-mmmm! This is a tasty burger... powered by node, express, mySQL and rendered
 ## Locations
 
 GitHub Repository Link: https://github.com/Gavin867/Big_Kahuna_Burger_App
+
 Deployed Application Link: https://big-kahuna-burger-app.herokuapp.com/
 
 ## Application Summary
